@@ -1,0 +1,26 @@
+type Curso {
+    _id: ID
+    titulo: String
+    profesor: String
+    descripcion: String
+    genero: String
+}
+
+type Query {
+  hello: String
+  saludo: String
+  getCurso: [Curso]
+  getCursos(id: ID!): Curso
+}
+
+input CursoInput{
+    titulo: String!
+    profesor: String!
+    descripcion: String!
+    genero: String!
+}
+
+type Mutation {
+  nuevoCurso(input: CursoInput!): Curso
+  editarCurso(id: ID!, input: CursoEditarInput): Curso
+}
